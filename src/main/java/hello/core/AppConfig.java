@@ -13,7 +13,9 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class AppConfig {
-
+    //@Bean memberService -> new MemoryMemberRepository()
+    //@Bean orderService -> new MemoryMemberRepository()
+    //두개를 생성해서 singleton이 깨지는 것 처럼 보인다
     @Bean
     public MemberService memberService(){
         return new MemberServiceImpl(memberRepository()); //의존성 주입
